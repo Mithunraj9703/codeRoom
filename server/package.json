@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm start",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mithunraj9703/codeRoom.git"
+  },
+  "author": "mithun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mithunraj9703/codeRoom/issues"
+  },
+  "homepage": "https://github.com/Mithunraj9703/codeRoom#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}
