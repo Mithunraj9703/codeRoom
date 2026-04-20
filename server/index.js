@@ -2,6 +2,7 @@ import express from 'express'
 import http from 'http'
 import { Server } from 'socket.io'
 import dotenv from 'dotenv'
+import cors from 'cors'
 dotenv.config()
 
 const app = express()
@@ -9,6 +10,9 @@ const server = http.createServer(app)
 const io = new Server(server)
 const userSocketMap = {}
 const roomCodeMap = {};
+app.use(cors({
+  origin: '*', // or your frontend URL
+}));
 const getAllConnectedClients = (roomId) => {
   return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map((socketId) => {
     return {
