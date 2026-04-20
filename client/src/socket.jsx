@@ -8,6 +8,6 @@ export const initSocket = async () => {
     transports: ['websocket'],
   }
 
-  return io(import.meta.env.VITE_BACKEND_URL, option)
+  return io("https://coderoom-3.onrender.com");
 
 }
