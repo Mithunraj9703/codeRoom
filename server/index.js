@@ -7,11 +7,17 @@ dotenv.config()
 
 const app = express()
 const server = http.createServer(app)
-const io = new Server(server)
+const io = new Server(server, {
+  cors: {
+    origin: "https://coderoom-4.onrender.com",
+    methods: ["GET", "POST"],
+  },
+});
 const userSocketMap = {}
 const roomCodeMap = {};
 app.use(cors({
-  origin: '*', // or your frontend URL
+  origin: "https://coderoom-4.onrender.com",
+  methods: ["GET", "POST"],
 }));
 const getAllConnectedClients = (roomId) => {
   return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map((socketId) => {
